@@ -296,7 +296,7 @@ end
 
 function theme.at_screen_connect(s)
     -- Quake application
-    s.quake = lain.util.quake({ app = awful.util.terminal })
+    s.quake = lain.util.quake({ app = awful.util.drop_terminal })
 
     -- If wallpaper is a function, call it with the screen
     local wallpaper = theme.wallpaper
