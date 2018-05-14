@@ -158,6 +158,9 @@ function theme.at_screen_connect(s)
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s, height = 16, bg = theme.bg_normal, fg = theme.fg_normal })
 
+    s.versiontextbox = wibox.widget.textbox()
+    s.versiontextbox:set_text(awesome.version)
+
 	s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
@@ -187,6 +190,8 @@ function theme.at_screen_connect(s)
             -- using separators
             arrow(theme.bg_normal, "#343434"),
             wibox.container.background(wibox.container.margin(mytextclock),4,7,"#343434"),
+            arrow("#343434", "#777E76"),
+            wibox.container.background(wibox.container.margin(s.versiontextbox),4,7,"#777E76"),
             arrow("#777E76", "alpha"),
             s.mylayoutbox,
         },
