@@ -127,7 +127,7 @@ mytextclock.font = theme.font
 function theme.at_screen_connect(s)
 
 	-- Quake application
-    s.quake = lain.util.quake({ app = awful.util.drop_terminal })
+    s.quake = lain.util.quake({ app = awful.util.drop_terminal, followtag = true, argname = "--name %s"})
 
     -- If wallpaper is a function, call it with the screen
     local wallpaper = theme.wallpaper
